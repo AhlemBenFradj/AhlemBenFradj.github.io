@@ -1,0 +1,980 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap";
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-content {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  min-width: 100%;
+  transition: opacity 0.5s ease;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+#home:checked~.carousel-content {
+  transform: translateX(0);
+}
+
+#blog:checked~.carousel-content {
+  transform: translateX(-100%);
+}
+
+#code:checked~.carousel-content {
+  transform: translateX(-200%);
+}
+
+#help:checked~.carousel-content {
+  transform: translateX(-300%);
+}
+
+#about:checked~.carousel-content {
+  transform: translateX(-400%);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.me {
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.eye-left,
+.eye-right {
+  animation: blink 3s infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  20%,
+  100% {
+    opacity: 1;
+  }
+
+  10% {
+    opacity: 0;
+  }
+}
+
+svg {
+  width: 50%;
+  height: auto;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+nav {
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 2%;
+  width: 40%;
+  height: auto;
+  border-radius: 15px;
+  display: flex;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 7px 12px -4px rgba(9, 136, 183, 0.2);
+
+  &::before {
+    content: "";
+    background: #fff;
+    width: 100%;
+    z-index: -2;
+    position: absolute;
+  }
+
+  label {
+    width: 100%;
+    height: 100%;
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: 400;
+    border-radius: 5px;
+    margin: 19px 14.5px;
+    color: #6EDCBE;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: #414140;
+    }
+
+    i {
+      margin-right: 2px;
+    }
+  }
+
+  .slider {
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    background: #6EDCBE;
+    left: 0;
+    top: 0;
+    transition: 0.45s ease;
+    z-index: -1;
+  }
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+#home:checked~nav label.home {
+  color: #fff;
+}
+
+#blog:checked~nav {
+  label.blog {
+    color: #fff;
+  }
+
+  .slider {
+    left: 20%;
+  }
+}
+
+#code:checked~nav {
+  label.code {
+    color: #fff;
+  }
+
+  .slider {
+    left: 40%;
+  }
+}
+
+#help:checked~nav {
+  label.help {
+    color: #fff;
+  }
+
+  .slider {
+    left: 60%;
+  }
+}
+
+#about:checked~nav {
+  label.about {
+    color: #fff;
+  }
+
+  .slider {
+    left: 80%;
+  }
+}
+
+#bg {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  background: #ffffff;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iNDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2JiYmJiYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9yYWRpYWxHcmFkaWVudD4KICA8cmVjdCB4PSItNTAiIHk9Ii01MCIgd2lkdGg9IjEwMSIgaGVpZ2h0PSIxMDEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+  background: -moz-radial-gradient(center, ellipse cover, #ffffff 40%, #bbbbbb 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(40%, #ffffff), color-stop(100%, #bbbbbb));
+  background: -webkit-radial-gradient(center, ellipse cover, #ffffff 40%, #bbbbbb 100%);
+  background: -o-radial-gradient(center, ellipse cover, #ffffff 40%, #bbbbbb 100%);
+  background: -ms-radial-gradient(center, ellipse cover, #ffffff 40%, #bbbbbb 100%);
+  background: radial-gradient(ellipse at center, #ffffff 40%, #bbbbbb 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#bbbbbb', GradientType=1);
+}
+
+.contact {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -125px;
+  margin-top: -125px;
+  height: 250px;
+  width: 250px;
+  background: rgba(0, 0, 0, 0.1);
+
+  border-radius: 2px;
+  -ms-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+
+.contact .envelope {
+  position: absolute;
+  height: 93px;
+  width: 165px;
+  left: 50%;
+  margin-left: -83px;
+  top: 50%;
+  margin-top: -50px;
+  background: #F9F9F9;
+
+  transition: margin-top 300ms;
+  -ms-transition: margin-top 300ms;
+  -moz-transition: margin-top 300ms;
+  -o-transition: margin-top 300ms;
+  -webkit-transition: margin-top 300ms;
+}
+
+.contact:hover .envelope {
+  transition-delay: 150ms;
+  -ms-transition-delay: 150ms;
+  -moz-transition-delay: 150ms;
+  -o-transition-delay: 150ms;
+  margin-top: -20px;
+}
+
+.contact .envelope .top {
+  position: absolute;
+  top: -3px;
+  left: 0px;
+  width: 100%;
+  height: 73px;
+  z-index: 30;
+  overflow: hidden;
+
+  transform-origin: top;
+  -ms-transform-origin: top;
+  -moz-transform-origin: top;
+  -o-transform-origin: top;
+  -webkit-transform-origin: top;
+
+  transition: transform 300ms 150ms, z-index 0ms 150ms, height 300ms 0ms, top 300ms 0ms;
+  -ms-transition: -ms-transform 300ms 150ms, z-index 0ms 150ms, height 300ms 0ms, top 300ms 0ms;
+  -moz-transition: -moz-transform 300ms 150ms, z-index 0ms 150ms, height 300ms 0ms, top 300ms 0ms;
+  -o-transition: -o-transform 300ms 150ms, z-index 0ms 150ms, height 300ms 0ms, top 300ms 0ms;
+  -webkit-transition: -webkit-transform 300ms 150ms, z-index 0ms 150ms, height 300ms 0ms, top 300ms 0ms;
+}
+
+.contact:hover .envelope .top {
+  transition: transform 300ms 0ms, height 300ms 150ms, top 300ms 150ms;
+  -ms-transition: -ms-transform 300ms 0ms, height 300ms 150ms, top 300ms 150ms;
+  -moz-transition: -moz-transform 300ms 0ms, height 300ms 150ms, top 300ms 150ms;
+  -o-transition: -o-transform 300ms 0ms, height 300ms 150ms, top 300ms 150ms;
+  -webkit-transition: -webkit-transform 300ms 0ms, height 300ms 150ms, top 300ms 150ms;
+
+  height: 10px;
+  top: -60px;
+
+  transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  -moz-transform: rotateX(180deg);
+  -o-transform: rotateX(180deg);
+  -webkit-transform: rotateX(180deg);
+}
+
+.contact .envelope .outer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  border-left: 83px solid transparent;
+  border-right: 82px solid transparent;
+  border-top: 70px solid #EEE;
+}
+
+.contact .envelope .outer .inner {
+  position: absolute;
+  left: -81px;
+  top: -73px;
+  border-left: 81px solid transparent;
+  border-right: 80px solid transparent;
+  border-top: 68px solid #333;
+}
+
+.contact .envelope .bottom {
+  position: absolute;
+  z-index: 20;
+  bottom: 0px;
+  left: 2px;
+  border-left: 81px solid transparent;
+  border-right: 80px solid transparent;
+  border-bottom: 45px solid #333;
+}
+
+.contact .envelope .left {
+  position: absolute;
+  z-index: 20;
+  top: 0px;
+  left: 0px;
+  border-left: 81px solid #333;
+  border-top: 45px solid transparent;
+  border-bottom: 45px solid transparent;
+}
+
+.contact .envelope .right {
+  position: absolute;
+  z-index: 20;
+  top: 0px;
+  right: 0px;
+  border-right: 80px solid #333;
+  border-top: 45px solid transparent;
+  border-bottom: 45px solid transparent;
+}
+
+.contact .envelope .cover {
+  position: absolute;
+  z-index: 15;
+  bottom: 0px;
+  left: 0px;
+  height: 55%;
+  width: 100%;
+  background: #EEE;
+}
+
+.contact .envelope .paper {
+  position: absolute;
+  height: 83px;
+  padding-top: 10px;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  background: #F9F9F9;
+  z-index: 10;
+  transition: margin-top 300ms 0ms;
+  -ms-transition: margin-top 300ms 0ms;
+  -moz-transition: margin-top 300ms 0ms;
+  -o-transition: margin-top 300ms 0ms;
+  -webkit-transition: margin-top 300ms 0ms;
+}
+
+.contact:hover .envelope .paper {
+  margin-top: -60px;
+  transition: margin-top 300ms 150ms;
+  -ms-transition: margin-top 300ms 150ms;
+  -moz-transition: margin-top 300ms 150ms;
+  -o-transition: margin-top 300ms 150ms;
+  -webkit-transition: margin-top 300ms 150ms;
+}
+
+.contact .envelope .paper a {
+  position: relative;
+  display: block;
+  font-size: 14px;
+  margin: 5px;
+  margin-bottom: 0px;
+  text-align: center;
+  color: #333;
+  text-decoration: none;
+}
+
+.contact .envelope .paper a.call .i {
+  position: absolute;
+  top: 2px;
+  left: 20px;
+  display: inline-block;
+  width: 3px;
+  height: 5px;
+  border-width: 5px 0 5px 2px;
+  border-style: solid;
+  border-color: #555;
+  background: transparent;
+
+  transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  -moz-transform: rotate(-30deg);
+  -o-transform: rotate(-30deg);
+  -webkit-transform: rotate(-30deg);
+
+  border-top-left-radius: 3px 5px;
+  border-bottom-left-radius: 3px 5px;
+  -moz-border-radius-topleft: 3px 5px;
+  -moz-border-radius-bottomleft: 3px 5px;
+  -webkit-border-top-left-radius: 3px 5px;
+  -webkit-border-bottom-left-radius: 3px 5px;
+
+  transition: border-color 300ms;
+  -ms-transition: border-color 300ms;
+  -moz-transition: border-color 300ms;
+  -o-transition: border-color 300ms;
+  -webkit-transition: border-color 300ms;
+}
+
+.contact .envelope .paper a {
+  color: #333;
+
+  transition: color 200ms;
+  -ms-transition: color 200ms;
+  -moz-transition: color 200ms;
+  -o-transition: color 200ms;
+  -webkit-transition: color 200ms;
+}
+
+.contact .envelope .paper a:hover {
+  color: #EEE;
+}
+
+.contact .envelope .paper a.call:hover .i {
+  border-color: #DDD;
+}
+
+.contact .envelope .paper a.mail .i {
+  position: absolute;
+  top: 0px;
+  left: 17px;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/******* Fonts Import Start **********/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+/********* Fonts Face CSS End **********/
+
+/******* Common Element CSS Start ******/
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+.clear {
+  clear: both;
+}
+
+img {
+  max-width: 100%;
+  border: 0px;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+}
+
+a:focus,
+a:active,
+a:visited,
+a:hover {
+  text-decoration: none;
+  outline: none;
+}
+
+a:hover {
+  color: #e73700;
+}
+
+h2 {
+  margin-bottom: 48px;
+  padding-bottom: 16px;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+  position: relative;
+  text-transform: capitalize;
+}
+
+h3 {
+  margin: 0 0 10px;
+  font-size: 28px;
+  line-height: 36px;
+}
+
+button {
+  outline: none !important;
+}
+
+/******* Common Element CSS End *********/
+
+/* -------- title style ------- */
+.line-title {
+  position: relative;
+  width: 400px;
+}
+
+.line-title::before,
+.line-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.line-title::before {
+  width: 100%;
+  background: #f2f2f2;
+}
+
+.line-title::after {
+  width: 32px;
+  background: #6EDCBE;
+}
+
+/******* Middle section CSS Start ******/
+/* -------- Landing page ------- */
+.game-section {
+  padding: 60px 50px;
+}
+
+.game-section .owl-stage {
+  margin: 15px 0;
+  display: flex;
+  display: -webkit-flex;
+}
+
+.game-section .item {
+  margin: 0 15px 60px;
+  width: 320px;
+  height: 400px;
+  display: flex;
+  display: -webkit-flex;
+  align-items: flex-end;
+  -webkit-align-items: flex-end;
+  background: #343434 no-repeat center center / cover;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.game-section .item.active {
+  width: 500px;
+  box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+}
+
+.game-section .item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+.game-section .item-desc {
+  padding: 0 24px 12px;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transform: translateY(calc(100% - 54px));
+  -webkit-transform: translateY(calc(100% - 54px));
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+}
+
+.game-section .item.active .item-desc {
+  transform: none;
+  -webkit-transform: none;
+}
+
+.game-section .item-desc p {
+  opacity: 0;
+  -webkit-transform: translateY(32px);
+  transform: translateY(32px);
+  transition: all 0.4s ease-in-out 0.2s;
+  -webkit-transition: all 0.4s ease-in-out 0.2s;
+}
+
+.game-section .item.active .item-desc p {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.game-section .owl-theme.custom-carousel .owl-dots {
+  margin-top: -20px;
+  position: relative;
+  z-index: 5;
+}
+
+/******** Middle section CSS End *******/
+
+/***** responsive css Start ******/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  h2 {
+    margin-bottom: 32px;
+  }
+
+  h3 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  /* -------- Landing page ------- */
+  .game-section {
+    padding: 50px 30px;
+  }
+
+  .game-section .item {
+    margin: 0 12px 60px;
+    width: 260px;
+    height: 360px;
+  }
+
+  .game-section .item.active {
+    width: 400px;
+  }
+
+  .game-section .item-desc {
+    transform: translateY(calc(100% - 46px));
+    -webkit-transform: translateY(calc(100% - 46px));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  h2 {
+    margin-bottom: 32px;
+  }
+
+  h3 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .line-title {
+    width: 330px;
+  }
+
+  /* -------- Landing page ------- */
+  .game-section {
+    padding: 50px 30px 40px;
+  }
+
+  .game-section .item {
+    margin: 0 12px 60px;
+    width: 240px;
+    height: 330px;
+  }
+
+  .game-section .item.active {
+    width: 360px;
+  }
+
+  .game-section .item-desc {
+    transform: translateY(calc(100% - 42px));
+    -webkit-transform: translateY(calc(100% - 42px));
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    margin: 0 0 8px;
+    font-size: 19px;
+    line-height: 24px;
+  }
+
+  .line-title {
+    width: 250px;
+  }
+
+  /* -------- Landing page ------- */
+  .game-section {
+    padding: 30px 15px 20px;
+  }
+
+  .game-section .item {
+    margin: 0 10px 40px;
+    width: 200px;
+    height: 280px;
+  }
+
+  .game-section .item.active {
+    width: 270px;
+    box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  .game-section .item-desc {
+    padding: 0 14px 5px;
+    transform: translateY(calc(100% - 42px));
+    -webkit-transform: translateY(calc(100% - 42px));
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#card {
+  background: #fff;
+  width: 450px;
+  height: 308px;
+  margin: 15% auto;
+  padding: 20px 30px;
+  border: 1px solid white;
+  -webkit-box-shadow: -1px 1px 8px 5px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: -1px 1px 8px 5px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: -1px 1px 8px 5px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(0, 0, 0, 0.1);
+  -khtml-box-shadow: -1px 1px 8px 5px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: -1px 1px 8px 5px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(0, 0, 0, 0.1);
+  box-shadow: -1px 1px 8px 5px rgba(0, 0, 0, 0.2), inset 0 0 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#card h1 {
+  color: #dc152c;
+  font-weight: normal;
+  font-size: 48px;
+  margin: 0 0 10px 0;
+}
+
+#card h1::first-letter {
+  color: #194ff7;
+}
+
+#card h1 b {
+  color: #f1840b;
+  font-weight: normal;
+}
+
+#card h1 b+b {
+  color: #194ff7;
+}
+
+#card h1 b+b+b {
+  color: #00940e;
+}
+
+.content {
+  text-align: left;
+  /* Pure CSS3 typing animation with steps() :
+     http://lea.verou.me/2011/09/pure-css3-typing-animation-with-steps/ */
+}
+
+.content ul {
+  padding: 0;
+  margin: 0;
+  font: 16px Arial;
+}
+
+.content ul li {
+  list-style: none;
+}
+
+.content ul li a {
+  color: #12C;
+}
+
+.content ul li span {
+  display: block;
+  width: 100%;
+  margin-bottom: 2px;
+}
+
+.content ul li span:nth-child(2) {
+  margin-bottom: 10px;
+}
+
+.content ul li span:nth-child(2) a {
+  color: #093;
+  text-decoration: none;
+}
+
+.content ul li span:nth-child(3),
+.content ul li span:nth-child(4) {
+  font-size: 14px;
+}
+
+.content .text {
+  border: 1px solid #7ec6fd;
+  float: left;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.content .text h2 {
+  position: relative;
+  float: left;
+  font-size: 100%;
+  font-weight: normal;
+  padding: 0;
+  margin: 5px 10px;
+}
+
+.content .text h2 span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  background: white;
+  /* same as background */
+  border-left: 0.1em solid black;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-animation: typing 1s steps(20, end), blink-caret 1s step-end infinite;
+  -moz-animation: typing 1s steps(20, end), blink-caret 1s step-end infinite;
+}
+
+/* Animate CSS : https://daneden.me/animate/ */
+.animated {
+  -webkit-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -khtml-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.4s;
+  -o-animation-duration: 0.4s;
+  -moz-animation-duration: 0.4s;
+  -khtml-animation-duration: 0.4s;
+  -ms-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  -o-animation-name: fadeIn;
+  -moz-animation-name: fadeIn;
+  -khtml-animation-name: fadeIn;
+  -ms-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+/* Typing keyframes */
+@-webkit-keyframes typing {
+  0% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+@-moz-keyframes typing {
+  0% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+@-o-keyframes typing {
+  0% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes typing {
+  0% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+/* FadeIn keyframes */
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
